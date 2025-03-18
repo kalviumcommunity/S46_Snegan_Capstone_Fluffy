@@ -18,7 +18,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 4 API requests
+// **GET Requests**
 
 // for pets data
 app.get("/main", (req, res) => {
@@ -95,7 +95,31 @@ app.post("/main/addtocart", (req, res) => {
 });
 
 
+// **PUT Requests**
 
+// Update pet data
+app.put("/main/editdata/:id", (req, res) => {
+    const id = req.params.id;
+    const update = req.body;
+    PetModal.findByIdAndUpdate(id, update, { new: true })
+        .then(updatedPet => {
+            if (!updatedPet) {
+                return res.status(404).json({ error: "Pet not found" });
+            }
+            res.json(updatedPet);
+        })
+        .catch(err => res.status(500).json({ error: "Failed to update pet" }));
+});
+
+// **DELETE Requests**
+
+// Remove item from cart
+app.delete('/main/addtocart/:id', (req, res) => {
+    const id = req.params.id;
+    CartModal.findByIdAndDelete(id)
+        .then(product => res.json(product))
+        .catch(err => res.status(500).json({ error: err.message }));
+});
 
 app.listen(1001, () => {
     console.log("Server is running at http://localhost:1001");
