@@ -1,0 +1,70 @@
+.pettoy-parallax {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 130px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .pettoy-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .pettoy-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    color: white;
+  }
+  
+  .pettoy-scroll-text {
+    transform: rotate(90deg);
+    text-align: right;
+    white-space: nowrap;
+    font-size: 0.7em;
+  }
+  
+  .pettoy-title {
+    font-size: 6em;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .pettoy-subtitle {
+    font-size: 1.5em;
+    padding-top: 10px;
+  }
+  
+  .pettoy-section {
+    padding: 50px 350px;
+    background: #D4E8FF;
+    line-height: 1.6;
+  }
+  
+  .pettoy-h2 {
+    font-size: 2.3rem;
+    padding: 25px;
+    text-align: center;
+    color: #00008B;
+  }
+  
+  .pettoy-h4 {
+    color: #00008B;
+    font-size: 1.1em;
+  }
+  
+  .pettoy-subsection {
+    padding-top: 20px;
+  }
+  
+  .pettoy-hr {
+    margin: 20px 0;
+    border-color: #00008B;
+  }
+  

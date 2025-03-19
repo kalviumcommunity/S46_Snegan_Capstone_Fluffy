@@ -1,0 +1,106 @@
+/* General Styles */
+.lostandfound-section {
+    padding: 50px 150px;
+    background-color: #f9f9f9;
+  }
+  
+  .lostandfound-section-header {
+    color: crimson; /* Updated color */
+    font-size: 1.9em;
+    text-align: center;
+  }
+  
+  .lostandfound-section-divider {
+    margin: 7px 0;
+  }
+  
+  .lostandfound-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+  }
+  
+  .lostandfound-pet-card {
+    overflow: hidden;
+  }
+  
+  .lostandfound-pet-image {
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid crimson; /* Updated color */
+    margin-bottom: -5px;
+  }
+  
+  .lostandfound-pet-details {
+    padding: 5px;
+    text-align: center;
+    border: 2px solid crimson; /* Updated color */
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+  }
+  
+  .lostandfound-pet-name {
+    font-size: 1.2em;
+    color: crimson; /* Updated color */
+  }
+  
+  .lostandfound-control-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .lostandfound-control-header {
+    color: crimson; /* Updated color */
+    font-size: 1.9em;
+  }
+  
+  .lostandfound-button {
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: crimson; /* Updated color */
+    color: white;
+    cursor: pointer;
+  }
+  
+  .lostandfound-pet-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+    height: 50vh;
+  }
+  
+  .lostandfound-pet-info-description {
+    font-size: 0.9rem;
+    padding-top: 10px;
+    line-height: 1.5;
+    width: 35vw;
+    overflow-y: hidden;
+    height: 10vh;
+    margin: 0;
+    word-wrap: break-word;
+  }
+  
+  .lostandfound-pet-info-image {
+    border-radius: 10px;
+    height: 350px;
+    width: 500px;
+    object-fit: cover;
+  }
+  
+  .lostandfound-adopt-button {
+    background: crimson; /* Updated color */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,113 @@
+.toyshop-section {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .toyshop-flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .toyshop-image {
+    height: 200px;
+    width: 100%;
+    object-fit:cover;
+  }
+  
+  .toyshop-details {
+    padding: 10px;
+    width: 30vw;
+  }
+  
+  .toyshop-info {
+    width: 25vw;
+    text-align: left;
+  }
+  
+  .toyshop-brand {
+    color: gray;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+  }
+  
+  .toyshop-title {
+    font-size: 1.2rem;
+  }
+  
+  .toyshop-price {
+    font-size: 1.2rem;
+    padding: 0px 0;
+  }
+  
+  
+  .toyshop-cart-actions {
+    padding: 5px 0;
+    text-align: left;
+  }
+  
+  .toyshop-cart-status {
+    color: #27408B;
+  }
+  
+  .toyshop-add-to-cart-btn {
+    background: #27408B;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .toyshop-main {
+    margin: 80px 110px;
+  }
+  
+  .toyshop-header {
+    color: #00008B;
+    text-align: right;
+    padding-bottom: 10px;
+    font-size: 2.5em;
+    border-bottom: 3px dotted #27408B;
+  }
+  
+  .toyshop-subheader {
+    text-align: left;
+    margin: 25px;
+    color: #00008B;
+    font-size: 1.8em;
+    text-decoration: underline;
+  }
+  
+  .toyshop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .toyshop-more-btn-container {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .toyshop-link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .toyshop-more-btn {
+    background: #27408B;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .toyshop-divider {
+    margin: 10px 0;
+  }
+  

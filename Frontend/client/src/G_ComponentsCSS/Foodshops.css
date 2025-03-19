@@ -1,0 +1,121 @@
+.foodshop-container {
+    margin: 80px 110px;
+  }
+  
+  .foodshop-heading {
+    color: #388E3C;
+    text-align: right;
+    padding: 10px;
+    font-size: 2em;
+    border-bottom: 3px dotted #388E3C;
+  }
+  
+  .foodshop-subheading {
+    text-align: left;
+    padding: 20px;
+    color: #388E3C;
+    text-decoration: underline;
+    font-size: 1.8em;
+  }
+  
+  .foodshop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .foodshop-item {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .foodshop-item-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .foodshop-item-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .foodshop-item-details {
+    padding: 5px;
+    width: 35vw;
+  }
+  
+  .foodshop-item-info {
+    padding: 5px;
+    width: 25vw;
+    text-align: left;
+  }
+  
+  .foodshop-item-description {
+    color: gray;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+  }
+  
+  .foodshop-item-name {
+    font-size: 1.1rem;
+  }
+  
+  .foodshop-item-divider {
+    margin: 10px 0;
+  }
+  
+  .foodshop-item-price {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+  
+  .foodshop-item-rating {
+    padding: 10px;
+  }
+  
+  .foodshop-item-cart {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .foodshop-item-added {
+    color: green;
+  }
+  
+  .foodshop-add-to-cart-button {
+    background: #388E3C;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .foodshop-button-container {
+    text-align: center;
+    padding: 5px;
+  }
+  
+  .foodshop-link {
+    text-decoration: none;
+  }
+  
+  .foodshop-see-more-button {
+    background: #388E3C;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .foodshop-divider {
+    margin: 15px 0;
+  }
+  

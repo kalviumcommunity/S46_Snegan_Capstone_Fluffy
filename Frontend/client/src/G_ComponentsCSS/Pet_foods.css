@@ -1,0 +1,71 @@
+.petfood-parallax {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 130px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .petfood-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .petfood-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    color: white;
+  }
+  
+  .petfood-scroll-text {
+    transform: rotate(90deg);
+    text-align: right;
+    white-space: nowrap;
+    font-size: 0.7em;
+  }
+  
+  .petfood-title {
+    font-size: 6em;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .petfood-subtitle {
+    font-size: 1.5em;
+    padding-top: 20px;
+  }
+  
+  .petfood-section {
+    padding: 50px 350px;
+    background: #F3F9E0;
+    line-height: 1.6;
+  }
+  
+  .petfood-h2 {
+    font-size: 2.7rem;
+    padding: 25px;
+    text-align: center;
+    color: #388E3C;
+    /* text-decoration: underline; */
+  }
+  
+  .petfood-h4 {
+    color: #388E3C;
+    font-size: 1.1em;
+  }
+  
+  .petfood-ul {
+    margin: 10px;
+  }
+  
+  .petfood-hr {
+    margin: 20px 0;
+    border-color: #388E3C;
+  }
+  

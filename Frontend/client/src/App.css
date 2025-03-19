@@ -1,0 +1,153 @@
+
+/* @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&family=Klee+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Neucha&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Rubik+Moonrocks&display=swap'); */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+#homeback {
+  background-image: url("./images/home4.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#adopt {
+  background-image: url("./images/adopt4.jpg");
+  background-position: center;
+  background-size: contain;
+  filter: brightness(80%);
+  height: 50vh;
+}
+
+#fluffont {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; 
+  text-align: center;
+  padding-bottom: 150px;
+}
+
+.static-text {
+  font-size: 5em;
+  font-family: "Rubik Moonrocks", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.typewriter-text {
+  font-size: 8em;
+  font-weight: bolder;
+}
+
+
+.image {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+
+
+
+
+/* scroll css for ADOPTION */
+
+#adoption::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#adoption::-webkit-scrollbar-track {
+  background: gray; 
+  border-radius: 25px;
+  margin: 100px;
+}
+
+#adoption::-webkit-scrollbar-thumb {
+  background:#6504b5;
+  border-radius: 25px;
+}
+
+#adoption::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+
+
+/* scroll css for REPORT */
+
+#report::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#report::-webkit-scrollbar-track {
+  background: white; 
+  border-radius: 25px;
+  margin: 100px;
+
+}
+
+#report::-webkit-scrollbar-thumb {
+  background:red;
+  border-radius: 25px;
+}
+
+#report::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+
+/* Scroll css for PETFOOD */
+
+
+#petfood::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#petfood::-webkit-scrollbar-track {
+  background: white; 
+  border-radius: 25px;
+  margin: 100px;
+}
+
+#petfood::-webkit-scrollbar-thumb {
+  background:#388E3C;
+  border-radius: 25px;
+}
+
+#petfood::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+/* Scroll css for PETTOY */
+
+#pettoy::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#pettoy::-webkit-scrollbar-track {
+  background: white; 
+  border-radius: 25px;
+  margin: 100px;
+}
+
+#pettoy::-webkit-scrollbar-thumb {
+  background:#00008B;
+  border-radius: 25px;
+}
+
+#pettoy::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
