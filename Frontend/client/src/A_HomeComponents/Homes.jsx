@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "../E_HomeComponentsCSS/Homes.CSS";
 import { Typewriter } from "react-simple-typewriter";
 import { Parallax } from "react-parallax";
-import homey from "../assets/images/home4.jpg"
+import HomePageImage from "../assets/images/Home.jpg"
 
 function Home() {
   const adoptionRef = useRef(null);
@@ -24,7 +24,7 @@ function Home() {
         <Navbar />
         <Parallax
           blur={0}
-          bgImage={homey}
+          bgImage={HomePageImage}
           bgImageAlt="Pet background"
           strength={150}
         >

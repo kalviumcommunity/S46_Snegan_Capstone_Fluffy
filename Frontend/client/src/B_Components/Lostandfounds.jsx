@@ -3,9 +3,9 @@ import Navbar from "../A_HomeComponents/Navbars.jsx";
 import Footer from "../A_HomeComponents/Footers.jsx";
 import Reports from "../D_Forms/Reports.jsx";
 import Lostandfoundpetdata from "../C_Apicalls/Adopt&Report/Lostandfoundpetdatas.jsx"
-import main from "../assets/images/report.jpg";
 import { Parallax } from "react-parallax";
 import "../G_ComponentsCSS/lostandfounds.css"
+import LostandFoundImage from "../assets/images/LostandFound.jpg";
 
 function LostAndFound() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -18,7 +18,7 @@ function LostAndFound() {
     <>
       <Parallax
         blur={0}
-        bgImage={main}
+        bgImage={LostandFoundImage}
         bgImageAlt="Lost and Found background"
         strength={150}
       >

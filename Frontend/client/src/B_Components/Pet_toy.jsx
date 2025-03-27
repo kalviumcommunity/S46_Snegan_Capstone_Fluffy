@@ -1,20 +1,18 @@
 import React from "react";
 import Navbar from "../A_HomeComponents/Navbars.jsx";
 import { Link } from "react-router-dom";
-// import Black from "../images/best.jpg";
-// import main from "../images/petfood.jpg";
 import Footer from "../A_HomeComponents/Footers.jsx";
 import { Parallax } from "react-parallax";
 import Toyshop from "./Toyshops";
 import '../G_ComponentsCSS/Pet_toys.css'; // Import the CSS file
-import main from "../assets/images/pettoy.jpg";
+import PettoyImage from "../assets/images/Pettoy.jpg";
 
 function Pettoy() {
   return (
     <>
       <Parallax
         blur={0}
-        bgImage={main}
+        bgImage={PettoyImage}
         bgImageAlt="Pet toy background"
         strength={150}
       >

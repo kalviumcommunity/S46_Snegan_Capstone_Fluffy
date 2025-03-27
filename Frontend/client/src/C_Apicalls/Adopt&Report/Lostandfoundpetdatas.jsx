@@ -41,21 +41,6 @@ function Lostandfoundpetdatas() {
     setSelectedAnimal(animal);
   };
 
-  const handleAdoptClick = (petId) => {
-    const confirmed = window.confirm("Do you wish to adopt this pet?");
-    if (confirmed) {
-      axios
-        .put(`${import.meta.env.VITE_API_BASE_URL}/main/update/${petId}`, { type: "adopted" })
-        .then((response) => {
-          setPets((prevPets) =>
-            prevPets.map((pet) =>
-              pet._id === petId ? { ...pet, type: "adopted" } : pet
-            )
-          );
-        })
-        .catch((err) => console.log(err));
-    }
-  };
 
   return (
     <div>
@@ -116,7 +101,6 @@ function Lostandfoundpetdatas() {
                   <h5 style={{ fontSize: "1em" }}>Description</h5>
                   <p className="lostandfound-pet-info-description">{pet.description}</p>
                   <button
-                    onClick={() => handleAdoptClick(pet._id)}
                     className="lostandfound-adopt-button"
                   >
                     Adopt Me

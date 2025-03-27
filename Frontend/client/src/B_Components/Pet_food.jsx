@@ -5,14 +5,14 @@ import Footer from "../A_HomeComponents/Footers.jsx";
 import { Parallax } from "react-parallax";
 import Foodshop from "./Foodshops.jsx";
 import '../G_ComponentsCSS/Pet_foods.css';
-import main from "../assets/images/petfood1.avif";
+import PetfoodImage from "../assets/images/Petfood.avif";
 
 function Petfood() {
   return (
     <>
       <Parallax
         blur={0}
-        bgImage={main}
+        bgImage={PetfoodImage}
         bgImageAlt="Pet food background"
         strength={150}
       >

@@ -5,7 +5,7 @@ import AdoptionPetdata from "../C_Apicalls/Adopt&Report/AdoptionPetdatas.jsx";
 import Footer from "../A_HomeComponents/Footers.jsx";
 import { Parallax } from "react-parallax";
 import "../G_ComponentsCSS/Adoption.css";
-import main from "../assets/images/background.jpg"
+import AdoptImage from "../assets/images/Adopt.jpg"
 
 function Adoptions() {
   
@@ -14,7 +14,7 @@ function Adoptions() {
     <>
       <Parallax
         blur={0}
-        bgImage={main}
+        bgImage={AdoptImage}
         bgImageAlt="Adoption background"
         strength={150}
       >

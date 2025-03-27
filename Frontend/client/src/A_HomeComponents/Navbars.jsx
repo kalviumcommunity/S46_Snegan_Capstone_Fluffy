@@ -154,6 +154,12 @@ function Navbar() {
             </Link>
           </p>
           <hr />
+          <p>
+            <Link to="/your-cart" className="sidebar-menu-item cart">
+              YOUR CART
+            </Link>
+          </p>
+          <hr />
         </div>
       </div>
     </>
