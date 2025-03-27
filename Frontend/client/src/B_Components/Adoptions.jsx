@@ -3,19 +3,21 @@ import Navbar from "../A_HomeComponents/Navbars.jsx";
 // import main from "../images/adopt4.jpg";
 import AdoptionPetdata from "../C_Apicalls/Adopt&Report/AdoptionPetdatas.jsx";
 import Footer from "../A_HomeComponents/Footers.jsx";
-// import { Parallax } from "react-parallax";
+import { Parallax } from "react-parallax";
 import "../G_ComponentsCSS/Adoption.css";
+import main from "../assets/images/background.jpg"
 
 function Adoptions() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const togglePopup = () => {
-    setIsPopupOpen(!isPopupOpen);
-  };
+  
 
   return (
     <>
-      {/* <Parallax id="image" bgImage={main} strength={200}> */}
+      <Parallax
+        blur={0}
+        bgImage={main}
+        bgImageAlt="Adoption background"
+        strength={150}
+      >
         <div className="parallax-container">
           <Navbar />
           <div className="parallax-content">
@@ -27,14 +29,14 @@ function Adoptions() {
                 </p>
                 <p className="fluffy-subheading">
                   A non-profit trust helping animals in Coimbatore, India, since
-                  (I don't know)
+                  2024
                 </p>
               </div>
               <p className="scroll-text">SCROLL DOWN</p>
             </div>
           </div>
         </div>
-      {/* </Parallax> */}
+      </Parallax>
 
       <section className="adoption-info">
         <div>
@@ -65,7 +67,7 @@ function Adoptions() {
             <p>
               Bringing a furry friend into your life can be an enriching
               experience but it also comes with its fair share of
-              responsibilities. Before you decide to adopt a dog, it’s essential
+              responsibilities. Before you decide to adopt a dog, it's essential
               to consider various factors to ensure a happy and healthy
               relationship between you and your future four-legged companion.
               Here are some things to keep in mind before you take the plunge
@@ -88,11 +90,11 @@ function Adoptions() {
                 <h4>Space and environment</h4>
                 <p>
                   Dogs, regardless of their size, need ample space to move
-                  around and play. Assess your living situation, whether it’s an
+                  around and play. Assess your living situation, whether it's an
                   apartment, house, or a shared space. Some breeds thrive in
                   smaller spaces, while others require a yard for exercise.
                   Ensure your living situation is suitable for the specific
-                  needs of the dog you’re considering.
+                  needs of the dog you're considering.
                 </p>
               </div>
               <hr className="adoption-divider" />
@@ -145,7 +147,7 @@ function Adoptions() {
                   Dogs have relatively long lifespans, and adopting one is a
                   commitment that lasts many years. Consider your plans, such as
                   career changes, moving, or starting a family, and how a dog
-                  fits into those plans. Ensure you’re ready for the long-term
+                  fits into those plans. Ensure you're ready for the long-term
                   commitment and responsibility of pet parenthood.
                 </p>
               </div>
@@ -156,7 +158,7 @@ function Adoptions() {
                   Decide whether to adopt from a shelter or purchase from a
                   reputable breeder. Both options have pros and cons, but
                   adopting from a shelter can be a fulfilling experience as
-                  you’re providing a loving home for a deserving dog.
+                  you're providing a loving home for a deserving dog.
                 </p>
               </div>
               <p>
@@ -175,22 +177,7 @@ function Adoptions() {
 
       <section>
         <AdoptionPetdata />
-      </section>
-
-      <section onClick={togglePopup} className="adoption-button">
-        <img src="https://cdn-icons-png.flaticon.com/128/2353/2353855.png" alt="" className="adoption-icon" />
-        <button onClick={togglePopup} className="adopt-form-btn">Adoption Form</button>
-      </section>
-
-      {isPopupOpen && (
-        <div className="popup-background">
-          <div className="popup-container">
-            <button onClick={togglePopup} className="close-popup">X</button>
-            <Reportform />
-          </div>
-        </div>
-      )}
-      
+      </section>      
       <Footer />
     </>
   );

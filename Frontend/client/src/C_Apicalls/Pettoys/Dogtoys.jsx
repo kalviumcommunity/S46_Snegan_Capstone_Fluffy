@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../A_HomeComponents/Navbars";
 import "../../F_ApicallsCSS/pet_toy.css"; 
 
@@ -9,15 +9,31 @@ function Dogtoys() {
   const [selectedToyCategory, setSelectedToyCategory] = useState("Chew Toy");
   const [cartItems, setCartItems] = useState([]);
   const [addingToCartId, setAddingToCartId] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Check if user is logged in
+    const token = localStorage.getItem('token');
+    if (!token) {
+      alert('Please login to view products');
+      navigate('/login');
+      return;
+    }
+
     axios
       .get("http://localhost:1001/main/pettoys")
       .then((result) => {
         setToys(result.data);
       })
-      .catch((err) => console.log(err));
-  }, []);
+      .catch((err) => {
+        console.log(err);
+        if (err.response?.status === 401) {
+          alert('Your session has expired. Please login again');
+          localStorage.removeItem('token');
+          navigate('/login');
+        }
+      });
+  }, [navigate]);
 
   const handleToyCategoryClick = (category) => {
     setSelectedToyCategory(category);
@@ -25,6 +41,13 @@ function Dogtoys() {
 
   const addToCart = (selectedProduct) => {
     setAddingToCartId(selectedProduct.id);
+
+    const token = localStorage.getItem('token');
+    if (!token) {
+      alert('Please login to add items to your cart');
+      navigate('/login');
+      return;
+    }
 
     const { productName, image, price } = selectedProduct;
 
@@ -35,13 +58,22 @@ function Dogtoys() {
     };
 
     axios
-      .post("http://localhost:1001/main/addtocart", cartItemData)
+      .post("http://localhost:1001/main/addtocart", cartItemData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       .then((response) => {
         console.log("Item added to cart:", response.data);
         setCartItems((prevItems) => [...prevItems, response.data]);
       })
       .catch((error) => {
         console.error("Error adding item to cart:", error);
+        if (error.response?.status === 401) {
+          alert('Your session has expired. Please login again');
+          localStorage.removeItem('token');
+          navigate('/login');
+        }
       })
       .finally(() => {
         setAddingToCartId(null);

@@ -1,25 +1,102 @@
 const mongoose = require("mongoose");
 
 const petSchema = new mongoose.Schema({
-    animal: String,
-    type:String,
-    name: String,
-    age: String,
-    size: String,
-    breed: String,
-    gender: String,
-    color: String,
-    image: String,
-    description: String,
-    lastSeen: String, 
-    dateLost: String,
-    livesin:String,
-    owner:{
-        name:String,
-        email:String,
-        phone:Number
+    petType: {
+        type: String,
+        enum: ["pet", "report"],
+        default: "pet"
+    },
+    petAnimal: {
+        type: String,
+        required: function() {
+            return this.petType === "pet";
+        }
+    },
+    petName: {
+        type: String,
+        required: true
+    },
+    petBreed: {
+        type: String,
+        required: function() {
+            return this.petType === "pet";
+        }
+    },
+    petAge: {
+        type: String,
+        required: function() {
+            return this.petType === "pet";
+        }
+    },
+    petGender: {
+        type: String,
+        required: function() {
+            return this.petType === "pet";
+        }
+    },
+    petColor: {
+        type: String,
+        required: function() {
+            return this.petType === "pet";
+        }
+    },
+    petSize: {
+        type: String,
+        required: function() {
+            return this.petType === "pet";
+        }
+    },
+    petDescription: {
+        type: String,
+        required: true
+    },
+    petLastSeen: {
+        type: String,
+        required: function() {
+            return this.petType === "report";
+        }
+    },
+    petDateLost: {
+        type: Date,
+        required: function() {
+            return this.petType === "pet";
+        }
+    },
+    petLivesIn: {
+        type: String,
+        required: function() {
+            return this.petType === "pet";
+        }
+    },
+    petImage: {
+        type: String,
+        required: true
+    },
+    contactEmail: {
+        type: String,
+        required: function() {
+            return this.petType === "report";
+        }
+    },
+    contactPhone: {
+        type: String,
+        required: function() {
+            return this.petType === "report";
+        }
+    },
+    userId: {
+        type: String,
+        required: false
+    },
+    status: {
+        type: String,
+        enum: ["pending", "in_progress", "resolved"],
+        default: "pending"
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 });
 
-const PetModal = mongoose.model("petdatas", petSchema);
-module.exports = PetModal;
+module.exports = mongoose.model("petdata", petSchema, "petdatas");

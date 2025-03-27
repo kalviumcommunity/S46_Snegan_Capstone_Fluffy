@@ -1,16 +1,19 @@
 const mongoose = require("mongoose");
 
 const petUsersSchema = new mongoose.Schema({
-    name:String,
-    email:String,
-    provider:String,
-    password:{
-        type:String,
-        required:function(){
-            return this.provider!== "google"
-        }
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    token: {
+        type: String
     }
-})
+});
 
-const petUsersModal = mongoose.model("petusers",petUsersSchema);
-module.exports = petUsersModal;
+const PetUsersModal = mongoose.model("petusers", petUsersSchema);
+module.exports = PetUsersModal;

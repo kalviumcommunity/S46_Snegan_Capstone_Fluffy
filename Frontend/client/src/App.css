@@ -151,3 +151,13 @@ body::-webkit-scrollbar {
 #pettoy::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
 }
+
+
+.error-message {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
