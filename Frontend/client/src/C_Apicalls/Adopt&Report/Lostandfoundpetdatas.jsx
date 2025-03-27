@@ -8,11 +8,14 @@ function Lostandfoundpetdatas() {
   const [rescuePets, setRescuePets] = useState([]);
   const [selectedAnimal, setSelectedAnimal] = useState(null);
 
+
+
   useEffect(() => {
     axios
       .get("http://localhost:1001/main")
       .then((result) => {
         setPets(result.data);
+        console.log(result)
       })
       .catch((err) => console.log(err));
   }, []);

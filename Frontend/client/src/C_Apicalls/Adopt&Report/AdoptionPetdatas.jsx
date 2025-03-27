@@ -9,16 +9,18 @@ function Adoptionpetdatas() {
   const [selectedAnimal, setSelectedAnimal] = useState(null);
 
   useEffect(() => {
+    console.log("Cla")
     axios
       .get("http://localhost:1001/main")
       .then((result) => {
         setPets(result.data);
+        console.log(result)
       })
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
-    const filteredAdopted = pets.filter((pet) => pet.type === "adopted");
+    const filteredAdopted = pets.filter((pet) =>  pet.type === "adopted");
     setAdoptedPets(filteredAdopted);
   }, [pets]);
 

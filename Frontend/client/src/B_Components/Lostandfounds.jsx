@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Navbar from "../A_HomeComponents/Navbars.jsx";
-// import main from "../images/adopt2.webp"; // Update with your image path
 import Footer from "../A_HomeComponents/Footers.jsx";
-// import { Parallax } from "react-parallax";
-import Lostandfoundpetdata from "../C_Apicalls/Adopt&Report/Lostandfoundpetdatas.jsx";
-import "../G_ComponentsCSS/Lostandfounds.css"; // Make sure the path is correct
+import Reports from "../D_Forms/Reports.jsx";
+import Lostandfoundpetdata from "../C_Apicalls/Adopt&Report/Lostandfoundpetdatas.jsx"
+import main from "../assets/images/report.jpg";
+import { Parallax } from "react-parallax";
+import "../G_ComponentsCSS/lostandfounds.css"
 
-function LostAndFounds() {
+function LostAndFound() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const togglePopup = () => {
@@ -15,7 +16,12 @@ function LostAndFounds() {
 
   return (
     <>
-      {/* <Parallax id="image" bgImage={main} strength={200}> */}
+      <Parallax
+        blur={0}
+        bgImage={main}
+        bgImageAlt="Lost and Found background"
+        strength={150}
+      >
         <div className="lostandfound-parallax-container">
           <Navbar />
           <div className="lostandfound-parallax-content">
@@ -33,7 +39,7 @@ function LostAndFounds() {
             </div>
           </div>
         </div>
-      {/* </Parallax> */}
+      </Parallax>
 
       <section className="lostandfound-info">
         <div>
@@ -134,7 +140,7 @@ function LostAndFounds() {
         <div className="lostandfound-popup-background">
           <div className="lostandfound-popup-container">
             <button onClick={togglePopup} className="lostandfound-popup-close-btn">X</button>
-            {/* Insert any form component here */}
+            <Reports />
           </div>
         </div>
       )}
@@ -144,4 +150,4 @@ function LostAndFounds() {
   );
 }
 
-export default LostAndFounds;
+export default LostAndFound;

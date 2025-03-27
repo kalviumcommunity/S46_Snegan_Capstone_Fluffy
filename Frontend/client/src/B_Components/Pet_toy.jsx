@@ -4,14 +4,20 @@ import { Link } from "react-router-dom";
 // import Black from "../images/best.jpg";
 // import main from "../images/petfood.jpg";
 import Footer from "../A_HomeComponents/Footers.jsx";
-// import { Parallax } from "react-parallax";
+import { Parallax } from "react-parallax";
 import Toyshop from "./Toyshops";
 import '../G_ComponentsCSS/Pet_toys.css'; // Import the CSS file
+import main from "../assets/images/pettoy.jpg";
 
 function Pettoy() {
   return (
     <>
-      {/* <Parallax id="image" bgImage={main} strength={200}> */}
+      <Parallax
+        blur={0}
+        bgImage={main}
+        bgImageAlt="Pet toy background"
+        strength={150}
+      >
         <div className="pettoy-parallax">
           <Navbar />
           <div className="pettoy-center">
@@ -25,7 +31,7 @@ function Pettoy() {
             </div>
           </div>
         </div>
-      {/* </Parallax> */}
+      </Parallax>
 
       <section className="pettoy-section">
         <div>

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../A_HomeComponents/Navbars.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Carts = () => {
   const [items, setItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCartItems();
@@ -15,7 +17,7 @@ const Carts = () => {
       if (response.data && Array.isArray(response.data)) {
         const updatedItems = response.data.map((item) => ({
           ...item,
-          quantity: parseInt(item.quantity, 10) || 1, // Set default quantity to 1 if not provided
+          quantity: parseInt(item.quantity, 10) || 1,
         }));
         setItems(updatedItems);
       } else {
@@ -26,18 +28,22 @@ const Carts = () => {
     }
   };
 
-  const handleQuantityChange = (productId, change) => {
-    const updatedItems = items.map((item) => {
-      if (item._id === productId) {
-        const newQuantity = item.quantity + change;
-        return {
-          ...item,
-          quantity: newQuantity > 0 ? newQuantity : item.quantity,
-        };
-      }
-      return item;
-    });
-    setItems(updatedItems);
+  const handleQuantityChange = async (productId, change) => {
+    try {
+      const updatedItems = items.map((item) => {
+        if (item._id === productId) {
+          const newQuantity = item.quantity + change;
+          return {
+            ...item,
+            quantity: newQuantity > 0 ? newQuantity : item.quantity,
+          };
+        }
+        return item;
+      });
+      setItems(updatedItems);
+    } catch (error) {
+      console.error("Error updating quantity:", error);
+    }
   };
 
   const calculateTotalCartValue = () => {
@@ -45,24 +51,26 @@ const Carts = () => {
     items.forEach((item) => {
       total += item.productprice * item.quantity;
     });
-    return total.toFixed(2); 
+    return total.toFixed(2);
   };
 
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:1001/main/addtocart/${id}`);
-      setItems(items.filter((item) => item._id !== id)); 
+      setItems(items.filter((item) => item._id !== id));
     } catch (err) {
       console.error("Error deleting item:", err);
     }
   };
 
-  const handleCheckout = () => {
-    axios.delete("http://localhost:1001/main/yourcart/clear").catch((error) =>
-      console.error("Error clearing cart on backend:", error)
-  );
-  setItems([]); 
-  alert("Checkout successful! All items will be removed from your cart.");
+  const handleCheckout = async () => {
+    try {
+      await axios.delete("http://localhost:1001/main/yourcart/clear");
+      setItems([]);
+      alert("Checkout successful! All items will be removed from your cart.");
+    } catch (error) {
+      console.error("Error clearing cart:", error);
+    }
   };
 
   return (

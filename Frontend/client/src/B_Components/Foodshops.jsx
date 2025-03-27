@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../G_ComponentsCSS/Foodshops.css";
+// import Cookies from "js-cookie"; // Import the js-cookie library
+// const token = Cookies.get("token");
 
 const Foodshops = () => {
   const [foods, setFoods] = useState([]);
@@ -102,40 +104,52 @@ const Foodshops = () => {
   return (
     <section className="foodshop-container">
       <h2 className="foodshop-heading">Explore Our Pet's Foods</h2>
-      
+
       <div>
         <h1 className="foodshop-subheading">All Cat Foods</h1>
         <div className="foodshop-grid">{renderFoods("cat", "food")}</div>
         <div className="foodshop-button-container">
-          {foods.filter(food => food.animal.toLowerCase() === "cat" && food.type.toLowerCase() === "cat food").length > 2 && (
+          {foods.filter(
+            (food) =>
+              food.animal.toLowerCase() === "cat" &&
+              food.type.toLowerCase() === "cat food"
+          ).length > 2 && (
             <Link to="/cat-food" className="foodshop-link">
               <button className="foodshop-see-more-button">See More..</button>
             </Link>
           )}
         </div>
       </div>
-      
+
       <hr className="foodshop-divider" />
 
       <div>
         <h1 className="foodshop-subheading">All Cat Treats</h1>
         <div className="foodshop-grid">{renderFoods("cat", "treat")}</div>
         <div className="foodshop-button-container">
-          {foods.filter(food => food.animal.toLowerCase() === "cat" && food.type.toLowerCase() === "cat treat").length > 2 && (
+          {foods.filter(
+            (food) =>
+              food.animal.toLowerCase() === "cat" &&
+              food.type.toLowerCase() === "cat treat"
+          ).length > 2 && (
             <Link to="/cat-treat" className="foodshop-link">
               <button className="foodshop-see-more-button">See More..</button>
             </Link>
           )}
         </div>
       </div>
-      
+
       <hr className="foodshop-divider" />
 
       <div>
         <h1 className="foodshop-subheading">All Dog Foods</h1>
         <div className="foodshop-grid">{renderFoods("dog", "food")}</div>
         <div className="foodshop-button-container">
-          {foods.filter(food => food.animal.toLowerCase() === "dog" && food.type.toLowerCase() === "dog food").length > 2 && (
+          {foods.filter(
+            (food) =>
+              food.animal.toLowerCase() === "dog" &&
+              food.type.toLowerCase() === "dog food"
+          ).length > 2 && (
             <Link to="/dog-food" className="foodshop-link">
               <button className="foodshop-see-more-button">See More..</button>
             </Link>
@@ -149,7 +163,11 @@ const Foodshops = () => {
         <h1 className="foodshop-subheading">All Dog Treats</h1>
         <div className="foodshop-grid">{renderFoods("dog", "treat")}</div>
         <div className="foodshop-button-container">
-          {foods.filter(food => food.animal.toLowerCase() === "dog" && food.type.toLowerCase() === "dog treat").length > 2 && (
+          {foods.filter(
+            (food) =>
+              food.animal.toLowerCase() === "dog" &&
+              food.type.toLowerCase() === "dog treat"
+          ).length > 2 && (
             <Link to="/dog-treat" className="foodshop-link">
               <button className="foodshop-see-more-button">See More..</button>
             </Link>
