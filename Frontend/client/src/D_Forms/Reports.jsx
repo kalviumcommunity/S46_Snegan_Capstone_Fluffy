@@ -45,7 +45,7 @@ function Report() {
           Cookies.set("Token", token);
           
           // Get user info from backend
-          const response = await axios.get("http://localhost:1001/auth/profile", {
+          const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/auth/profile`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           
@@ -87,7 +87,7 @@ function Report() {
           petImage: url,
         }));
 
-        const response = await axios.post("http://localhost:1001/main/postdata", {
+        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/main/postdata`, {
           ...petInfo,
           petImage: url,
         });
@@ -125,7 +125,7 @@ function Report() {
 
   const handleGoogleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:1001/auth/google");
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/google`);
       if (response.data && response.data.redirectURI) {
         window.location.href = response.data.redirectURI;
       }

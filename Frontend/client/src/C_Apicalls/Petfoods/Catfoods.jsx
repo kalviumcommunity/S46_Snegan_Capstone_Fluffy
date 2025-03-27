@@ -13,7 +13,7 @@ function Catfoods() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:1001/main/petfoods")
+      .get(`${import.meta.env.VITE_API_BASE_URL}/main/petfoods`)
       .then((result) => {
         setFoods(result.data);
       })
@@ -36,7 +36,7 @@ function Catfoods() {
     };
 
     axios
-      .post("http://localhost:1001/main/addtocart", cartItemData)
+      .post(`${import.meta.env.VITE_API_BASE_URL}/main/addtocart`, cartItemData)
       .then((response) => {
         console.log("Item added to cart:", response.data);
         setCartItems((prevItems) => [...prevItems, response.data]);
