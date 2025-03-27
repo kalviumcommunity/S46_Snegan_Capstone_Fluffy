@@ -13,7 +13,7 @@ const Carts = () => {
 
   const fetchCartItems = async () => {
     try {
-      const response = await axios.get("http://localhost:1001/main/yourcart");
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/main/yourcart`);
       if (response.data && Array.isArray(response.data)) {
         const updatedItems = response.data.map((item) => ({
           ...item,
@@ -56,7 +56,7 @@ const Carts = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:1001/main/addtocart/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/main/addtocart/${id}`);
       setItems(items.filter((item) => item._id !== id));
     } catch (err) {
       console.error("Error deleting item:", err);
@@ -65,7 +65,7 @@ const Carts = () => {
 
   const handleCheckout = async () => {
     try {
-      await axios.delete("http://localhost:1001/main/yourcart/clear");
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/main/yourcart/clear`);
       setItems([]);
       alert("Checkout successful! All items will be removed from your cart.");
     } catch (error) {

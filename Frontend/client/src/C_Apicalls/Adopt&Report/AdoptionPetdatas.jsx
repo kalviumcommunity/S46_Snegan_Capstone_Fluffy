@@ -11,7 +11,7 @@ function Adoptionpetdatas() {
   useEffect(() => {
     console.log("Cla")
     axios
-      .get("http://localhost:1001/main")
+      .get(`${import.meta.env.VITE_API_BASE_URL}/main`)
       .then((result) => {
         setPets(result.data);
         console.log(result)
@@ -44,7 +44,7 @@ function Adoptionpetdatas() {
     const confirmed = window.confirm("Do you wish to adopt this pet?");
     if (confirmed) {
       axios
-        .put(`http://localhost:1001/main/update/${petId}`, { type: "adopted" })
+        .put(`${import.meta.env.VITE_API_BASE_URL}/main/update/${petId}`, { type: "adopted" })
         .then((response) => {
           setPets((prevPets) =>
             prevPets.map((pet) =>

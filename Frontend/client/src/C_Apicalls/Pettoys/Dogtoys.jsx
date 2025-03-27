@@ -21,7 +21,7 @@ function Dogtoys() {
     }
 
     axios
-      .get("http://localhost:1001/main/pettoys")
+      .get(`${import.meta.env.VITE_API_BASE_URL}/main/pettoys`)
       .then((result) => {
         setToys(result.data);
       })
@@ -58,7 +58,7 @@ function Dogtoys() {
     };
 
     axios
-      .post("http://localhost:1001/main/addtocart", cartItemData, {
+      .post(`${import.meta.env.VITE_API_BASE_URL}/main/addtocart`, cartItemData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -12,7 +12,7 @@ const Foodshops = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:1001/main/petfoods")
+      .get(`${import.meta.env.VITE_API_BASE_URL}/main/petfoods`)
       .then((result) => {
         setFoods(result.data);
       })
@@ -31,7 +31,7 @@ const Foodshops = () => {
     };
 
     axios
-      .post("http://localhost:1001/main/addtocart", cartItemData)
+      .post(`${import.meta.env.VITE_API_BASE_URL}/main/addtocart`, cartItemData)
       .then((response) => {
         setCartItems((prevItems) => [...prevItems, response.data]);
       })

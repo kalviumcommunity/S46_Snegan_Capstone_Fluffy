@@ -21,7 +21,7 @@ const GoogleLogin = () => {
             if (code) {
                 try {
                     // Exchange code for token
-                    const response = await axios.post("http://localhost:1001/auth/google/callback", { code });
+                    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/google/callback`, { code });
                     
                     if (response.data.token) {
                         // Store token in cookie
@@ -47,7 +47,7 @@ const GoogleLogin = () => {
     const handleGoogleLogin = async () => {
         try {
             // Get Google OAuth URL from backend
-            const response = await axios.get("http://localhost:1001/auth/google/url");
+            const response = await axios.get("${import.meta.env.VITE_API_BASE_URL}/auth/google/url");
             
             if (response.data.url) {
                 // Redirect to Google login page in the same tab
